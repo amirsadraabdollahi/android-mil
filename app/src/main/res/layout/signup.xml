@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.SignUp">
+    tools:context="view.SignUp">
 
     <EditText
         android:id="@+id/emailSignUp"
@@ -114,7 +114,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="60dp"
-        android:onClick="signUp"
+        android:onClick="signUp1"
         android:text="@string/signUp"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"

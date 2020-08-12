@@ -15,7 +15,7 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.signup);
     }
 
-    public void signUp(View view) {
+    public void signUp1(View view) {
         EditText usernameEditText = findViewById(R.id.usernameSignUp);
         String username = String.valueOf(usernameEditText.getText());
         EditText passwordEditText = findViewById(R.id.passwordSignUp);
