@@ -3,5 +3,8 @@
     <string name="username">username :</string>
     <string name="password">password :</string>
     <string name="login">login</string>
-    <string name="signup">signUp</string>
+    <string name="signUp">signUp</string>
+    <string name="phone_number">phone number :</string>
+    <string name="email">email :</string>
+    <string name="signUp">signUp</string>
 </resources>
