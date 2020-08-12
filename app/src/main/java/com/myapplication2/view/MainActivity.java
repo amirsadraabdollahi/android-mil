@@ -17,9 +17,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void login(View view) {
-        EditText usernameEditText = findViewById(R.id.usernameSignUp);
+        EditText usernameEditText = findViewById(R.id.username);
         String username = String.valueOf(usernameEditText.getText());
-        EditText passwordEditText = findViewById(R.id.passwordSignUp);
+        EditText passwordEditText = findViewById(R.id.password);
         String password = String.valueOf(passwordEditText.getText());
         //Todo : go to send email
 
