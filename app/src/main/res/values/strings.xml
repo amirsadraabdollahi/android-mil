@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MyApplication2</string>
+    <string name="username">username :</string>
+    <string name="password">password :</string>
+    <string name="login">login</string>
+    <string name="signup">signUp</string>
 </resources>
