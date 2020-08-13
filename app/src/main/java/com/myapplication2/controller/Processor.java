@@ -46,4 +46,16 @@ public class Processor {
         return "you joined us ;)";
 
     }
+
+    public String login(String username, String password){
+        if(!User.hasUserWithUsername(username)){
+            return "wrong username";
+        }
+        User user = User.getUserByUsername(username);
+        if(!user.getPassword().equals(password)){
+            return "wrong password";
+        }
+        User.login(username);
+        return "successfully logged in";
+    }
 }
