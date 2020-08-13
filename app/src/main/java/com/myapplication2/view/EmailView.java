@@ -21,20 +21,20 @@ public class EmailView extends AppCompatActivity {
     }
 
     public void sendEmail(View view) {
-        EditText emailAddress = view.findViewById(R.id.receiverEmail);
-        EditText emailSubject = view.findViewById(R.id.subject);
-        EditText emailContext = view.findViewById(R.id.context);
-        String emailAddressText = String.valueOf(emailAddress.getText());
+        EditText emailAddress = findViewById(R.id.receiverEmail);
+        EditText emailSubject = findViewById(R.id.subject);
+        EditText emailContext = findViewById(R.id.context);
+        String emailAddressText = emailAddress.getText().toString();
         if (emailAddressText.isEmpty()) {
             Toast.makeText(this, "please fill receiver email", Toast.LENGTH_LONG).show();
             return;
         }
-        String emailSubjectText = String.valueOf(emailSubject.getText());
+        String emailSubjectText = emailSubject.getText().toString();
         if (emailSubjectText.isEmpty()) {
             Toast.makeText(this, "please fill email subject", Toast.LENGTH_LONG).show();
             return;
         }
-        String emailContextText = String.valueOf(emailContext.getText());
+        String emailContextText = emailContext.getText().toString();
         Toast.makeText(this, processor.sendEmail(emailAddressText, emailSubjectText, emailContextText), Toast.LENGTH_LONG).show();
         emailAddress.getText().clear();
         emailSubject.getText().clear();

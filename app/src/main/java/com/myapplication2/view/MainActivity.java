@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void login(View view) {
         EditText usernameEditText = findViewById(R.id.username);
-        String username = String.valueOf(usernameEditText.getText());
+        String username = usernameEditText.getText().toString();
         EditText passwordEditText = findViewById(R.id.password);
-        String password = String.valueOf(passwordEditText.getText());
+        String password = passwordEditText.getText().toString();
         String result = processor.login(username, password);
         if (result.equals("successfully logged in")) {
             Intent intent = new Intent(this, EmailView.class);

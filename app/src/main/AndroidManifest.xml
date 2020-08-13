@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication2">
         <activity android:name=".view.EmailView"></activity>
+        <activity android:name=".view.SignUp"></activity>
         <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -12,26 +12,29 @@ import com.myapplication2.controller.Processor;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SignUp extends AppCompatActivity {
-    private Intent intent;
     private Processor processor;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
         this.processor = Processor.getProcessor();
-        intent = this.getIntent();
     }
 
     public void signUp1(View view) {
         EditText usernameEditText = findViewById(R.id.usernameSignUp);
-        String username = String.valueOf(usernameEditText.getText());
+        String username = usernameEditText.getText().toString();
         EditText passwordEditText = findViewById(R.id.passwordSignUp);
-        String password = String.valueOf(passwordEditText.getText());
+        String password = passwordEditText.getText().toString();
         EditText emailEditText = findViewById(R.id.emailSignUp);
-        String email = String.valueOf(emailEditText.getText());
+        String email = emailEditText.getText().toString();
         EditText phoneNumberEditText = findViewById(R.id.phoneNumberSignUp);
-        String phoneNumber = String.valueOf(phoneNumberEditText.getText());
+        String phoneNumber = phoneNumberEditText.getText().toString();
         //Todo : signUp and goto send email
-        Toast.makeText(this, processor.signUp(username, password, email, phoneNumber), Toast.LENGTH_LONG).show();
+        String result = processor.signUp(username, password, email, phoneNumber);
+        Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+        if(result.equals("you joined us ;)")){
+            Intent intent = new Intent(this, EmailView.class);
+            startActivity(intent);
+        }
     }
 }
