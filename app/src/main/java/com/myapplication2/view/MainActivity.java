@@ -2,6 +2,7 @@ package com.myapplication2.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -23,9 +24,11 @@ public class MainActivity extends AppCompatActivity {
         String password = String.valueOf(passwordEditText.getText());
         //Todo : go to send email
 
+
     }
 
     public void signUp(View view) {
-
+        Intent intent = new Intent(this, SignUp.class);
+        startActivity(intent);
     }
 }

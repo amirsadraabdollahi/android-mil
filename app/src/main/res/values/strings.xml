@@ -6,4 +6,9 @@
     <string name="signUp">signUp</string>
     <string name="phone_number">phone number :</string>
     <string name="email">email :</string>
+    <string name="send_email">send email</string>
+    <string name="receiver">receiver :</string>
+    <string name="subject">subject :</string>
+    <string name="context">context :</string>
+    <string name="send">send</string>
 </resources>
