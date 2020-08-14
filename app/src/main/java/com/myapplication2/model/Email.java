@@ -20,4 +20,13 @@ public class Email {
     public String getReceiver() {
         return receiver;
     }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public String getContext() {
+        return context;
+    }
 }
+
