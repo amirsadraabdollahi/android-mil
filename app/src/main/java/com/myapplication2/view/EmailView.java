@@ -40,6 +40,7 @@ public class EmailView extends AppCompatActivity {
         }
         String emailContextText = emailContext.getText().toString();
         Toast.makeText(this, processor.sendEmail(emailAddressText, emailSubjectText, emailContextText, emailUrlString), Toast.LENGTH_LONG).show();
+//        sendRealEmail(view);
         emailAddress.getText().clear();
         emailSubject.getText().clear();
         emailContext.getText().clear();
