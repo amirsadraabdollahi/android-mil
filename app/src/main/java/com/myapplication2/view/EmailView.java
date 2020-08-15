@@ -3,6 +3,7 @@ package com.myapplication2.view;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -42,8 +43,21 @@ public class EmailView extends AppCompatActivity {
         emailAddress.getText().clear();
         emailSubject.getText().clear();
         emailContext.getText().clear();
-
     }
+
+    public void sendRealEmail(View view){
+        Intent intent = Intent.makeMainSelectorActivity(Intent.ACTION_MAIN, Intent.CATEGORY_APP_EMAIL);
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{ "amirsadrathirteen13@gmail.com"});
+        intent.putExtra(Intent.EXTRA_SUBJECT, "first subject");
+        intent.putExtra(Intent.EXTRA_TEXT, "text first text first");
+        intent.setType("message/rfc822");
+        try {
+            startActivity(Intent.createChooser(intent, "Send mail..."));
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
     public void inbox(View view) {
         Intent intent = new Intent(this, EmailInboxActivity.class);
