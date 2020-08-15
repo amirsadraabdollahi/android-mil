@@ -13,7 +13,7 @@ public class Processor {
         return processor;
     }
 
-    public String sendEmail(String receiverEmail, String subject, String context){
+    public String sendEmail( String receiverEmail, String subject, String context, String emailUrl){
         User receiver = User.getUserByEmail(receiverEmail);
         if(receiver == null){
             return "user with this email does't exist";
@@ -22,6 +22,9 @@ public class Processor {
         Email email = new Email(sender.getUsername(), receiver.getUsername(), subject, context);
         sender.sendEmail(email);
         receiver.receiveEmail(email);
+        if(!emailUrl.isEmpty()){
+            email.setUrl(emailUrl);
+        }
         return "email sent successfully";
     }
 

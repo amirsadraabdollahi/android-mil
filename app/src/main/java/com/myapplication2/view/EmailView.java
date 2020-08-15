@@ -25,6 +25,8 @@ public class EmailView extends AppCompatActivity {
         EditText emailAddress = findViewById(R.id.receiverEmail);
         EditText emailSubject = findViewById(R.id.subject);
         EditText emailContext = findViewById(R.id.context);
+        EditText emailUrl = findViewById(R.id.url);
+        String emailUrlString = emailUrl.getText().toString();
         String emailAddressText = emailAddress.getText().toString();
         if (emailAddressText.isEmpty()) {
             Toast.makeText(this, "please fill receiver email", Toast.LENGTH_LONG).show();
@@ -36,7 +38,7 @@ public class EmailView extends AppCompatActivity {
             return;
         }
         String emailContextText = emailContext.getText().toString();
-        Toast.makeText(this, processor.sendEmail(emailAddressText, emailSubjectText, emailContextText), Toast.LENGTH_LONG).show();
+        Toast.makeText(this, processor.sendEmail(emailAddressText, emailSubjectText, emailContextText, emailUrlString), Toast.LENGTH_LONG).show();
         emailAddress.getText().clear();
         emailSubject.getText().clear();
         emailContext.getText().clear();

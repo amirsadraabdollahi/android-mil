@@ -27,13 +27,16 @@ public class User {
     }
 
     public ArrayList<Email> getAllEmails() {
-        if(receivedEmails.isEmpty()){
-            receivedEmails.add(new Email("sender1", "receiver1","subject1", "context1" ));
-            receivedEmails.add(new Email("sender1", "receiver1","subject1", "context1" ));
-            receivedEmails.add(new Email("sender1", "receiver1","subject1", "context1" ));
-            receivedEmails.add(new Email("sender1", "receiver1","subject1", "context1" ));
-            receivedEmails.add(new Email("sender1", "receiver1","subject1", "context1" ));
-            receivedEmails.add(new Email("sender1", "receiver1","subject1", "context1" ));
+        if (receivedEmails.isEmpty()) {
+            Email email1 = new Email("sender1", "receiver1", "subject1", "context1");
+            email1.setUrl("https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg");
+            receivedEmails.add(email1);
+            receivedEmails.add(new Email("sender1", "receiver1", "subject1", "context1"));
+            receivedEmails.add(new Email("sender1", "receiver1", "subject1", "context1"));
+            receivedEmails.add(new Email("sender1", "receiver1", "subject1", "context1"));
+            receivedEmails.add(new Email("sender1", "receiver1", "subject1", "context1"));
+            receivedEmails.add(new Email("sender1", "receiver1", "subject1", "context1"));
+
         }
         return receivedEmails;
     }
@@ -54,8 +57,8 @@ public class User {
         return usersUserName.contains(username);
     }
 
-    public static boolean correctPassword(String username, String password){
-        if(Objects.requireNonNull(User.getUserByUsername(username)).getPassword().equals(password)){
+    public static boolean correctPassword(String username, String password) {
+        if (Objects.requireNonNull(User.getUserByUsername(username)).getPassword().equals(password)) {
             return true;
         }
         return false;
@@ -70,9 +73,9 @@ public class User {
         return null;
     }
 
-    public static User getUserByEmail(String email){
+    public static User getUserByEmail(String email) {
         for (User user : User.users) {
-            if(user.getEmail().equals(email)){
+            if (user.getEmail().equals(email)) {
                 return user;
             }
         }
@@ -88,7 +91,7 @@ public class User {
     }
 
     public void sendEmail(Email email) {
-       User receiver = User.getUserByUsername(email.getReceiver());
+        User receiver = User.getUserByUsername(email.getReceiver());
         if (receiver != null) {
             receiver.receiveEmail(email);
         }
