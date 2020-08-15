@@ -2,6 +2,7 @@ package com.myapplication2.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -40,5 +41,10 @@ public class EmailView extends AppCompatActivity {
         emailSubject.getText().clear();
         emailContext.getText().clear();
 
+    }
+
+    public void inbox(View view) {
+        Intent intent = new Intent(this, EmailInboxActivity.class);
+        startActivity(intent);
     }
 }

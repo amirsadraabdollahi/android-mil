@@ -14,10 +14,6 @@ import com.myapplication2.model.Email;
 
 import java.util.ArrayList;
 
-/**
- * Created by Seyyed Parsa Neshaei on 8/6/20
- * All Rights Reserved
- */
 public class EmailAdapter extends RecyclerView.Adapter<EmailAdapter.ViewHolder> {
 
     private ArrayList<Email> data;

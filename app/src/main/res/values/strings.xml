@@ -11,4 +11,5 @@
     <string name="subject">subject :</string>
     <string name="context">context :</string>
     <string name="send">send</string>
+    <string name="inbox">inbox</string>
 </resources>

@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.myapplication2.R;
 import com.myapplication2.controller.Processor;
+import com.myapplication2.model.User;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.processor = Processor.getProcessor();
+        new User("s", "s", "abdollahiamirsadra@gmail.com", "0911");
+        new User("a", "a", "amirsadrathirteen13@gmail.com", "0933");
     }
 
     public void login(View view) {

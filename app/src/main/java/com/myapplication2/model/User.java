@@ -26,6 +26,18 @@ public class User {
         usersUserName.add(this.username);
     }
 
+    public ArrayList<Email> getAllEmails() {
+        if(receivedEmails.isEmpty()){
+            receivedEmails.add(new Email("sender1", "receiver1","subject1", "context1" ));
+            receivedEmails.add(new Email("sender1", "receiver1","subject1", "context1" ));
+            receivedEmails.add(new Email("sender1", "receiver1","subject1", "context1" ));
+            receivedEmails.add(new Email("sender1", "receiver1","subject1", "context1" ));
+            receivedEmails.add(new Email("sender1", "receiver1","subject1", "context1" ));
+            receivedEmails.add(new Email("sender1", "receiver1","subject1", "context1" ));
+        }
+        return receivedEmails;
+    }
+
     public String getUsername() {
         return username;
     }
